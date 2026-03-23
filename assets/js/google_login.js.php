@@ -10,12 +10,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBVH0o1M4fCWrxUNP2jF0VpVpRCBOVN8UY",
-  authDomain: "skill-swap-email-login.firebaseapp.com",
-  projectId: "skill-swap-email-login",
-  storageBucket: "skill-swap-email-login.firebasestorage.app",
-  messagingSenderId: "998351948212",
-  appId: "1:998351948212:web:8b60d3a390e3d310100ae1",
+//firebase configurations
 };
 
 const app = initializeApp(firebaseConfig);
