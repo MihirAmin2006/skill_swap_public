@@ -1,0 +1,151 @@
+/* ═════════════════════════════════════════════════════════════════════════════════════
+   admin/common.css  –  SkillSwap Admin  –  Sidebar System Only
+   Only sidebar pin system and navigation active states
+   ═════════════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Navigation Active State ── */
+.nav-item.active-state {
+  background-color: #1e3a8a !important;
+  color: white !important;
+}
+
+.nav-item.active-state svg {
+  color: white !important;
+}
+
+html.dark .nav-item.active-state {
+  background-color: rgba(129, 140, 248, 0.15) !important;
+  color: #a5b4fc !important;
+}
+
+html.dark .nav-item.active-state svg {
+  color: #a5b4fc !important;
+}
+
+/* ───────── SIDEBAR PIN SYSTEM ───────── */
+:root {
+  --sidebar-full: 16rem;
+  --sidebar-mini: 5rem;
+}
+
+/* Desktop sidebar */
+#sidebar {
+  width: var(--sidebar-full);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.sidebar-collapsed #sidebar {
+  width: var(--sidebar-mini);
+  height: 100vh;
+}
+
+body.sidebar-collapsed #closeSidebar {
+  display: none;
+}
+
+body.sidebar-collapsed #sidebar .nav-item span,
+body.sidebar-collapsed #sidebar .logo-text,
+body.sidebar-collapsed #sidebar .text-xs,
+body.sidebar-collapsed #sidebar .ml-auto {
+  display: none;
+}
+
+body.sidebar-collapsed #sidebar:hover {
+  width: var(--sidebar-full);
+}
+
+body.sidebar-collapsed #sidebar:hover .nav-item span,
+body.sidebar-collapsed #sidebar:hover .logo-text,
+body.sidebar-collapsed #sidebar:hover .text-xs,
+body.sidebar-collapsed #sidebar:hover .ml-auto {
+  display: inline;
+}
+
+/* Main content resizing */
+main {
+  margin-left: var(--sidebar-full);
+  transition: margin-left 0.3s ease;
+}
+
+body.sidebar-collapsed main {
+  margin-left: var(--sidebar-mini);
+}
+
+/* Hide pin button when sidebar is collapsed */
+body.sidebar-collapsed #pinToggle {
+  display: none;
+}
+
+body.sidebar-collapsed #sidebar:hover #pinToggle {
+  display: flex;
+}
+
+/* ───────── MOBILE RESPONSIVE STYLES ───────── */
+
+/* Tablet adjustments */
+@media only screen and (max-width: 1023px) {
+  #sidebar {
+    position: fixed;
+    left: -100%;
+    width: 280px;
+    z-index: 100;
+    transition: left 0.3s ease;
+  }
+
+  #sidebar.mobile-open {
+    left: 0;
+  }
+
+  main {
+    margin-left: 0 !important;
+  }
+
+  body.sidebar-collapsed main {
+    margin-left: 0 !important;
+  }
+
+  #pinToggle {
+    display: none !important;
+  }
+
+  /* Mobile overlay */
+  #mobileOverlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 90;
+    backdrop-filter: blur(2px);
+  }
+
+  #mobileOverlay.active {
+    display: block;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small mobile adjustments */
+@media only screen and (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Make tables scrollable */
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Hide mobile-specific elements */
+  .mobile-hide {
+    display: none !important;
+  }
+}

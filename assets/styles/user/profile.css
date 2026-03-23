@@ -1,0 +1,49 @@
+.gradient-btn {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 55%, #3730a3 100%);
+}
+
+.gradient-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #3730a3 55%, #1e3a8a 100%);
+}
+
+.mesh-bg {
+  background-image:
+    radial-gradient(
+      circle at 12% 50%,
+      rgba(30, 58, 138, 0.08),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 88% 25%,
+      rgba(245, 158, 11, 0.07),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(99, 102, 241, 0.06),
+      transparent 50%
+    );
+}
+
+.dark .mesh-bg {
+  background-image:
+    radial-gradient(circle at 12% 50%, rgba(30, 58, 138, 0.2), transparent 50%),
+    radial-gradient(
+      circle at 88% 25%,
+      rgba(245, 158, 11, 0.11),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(99, 102, 241, 0.14),
+      transparent 50%
+    );
+}
+
+.profile-photo-preview {
+  transition: all 0.3s ease;
+}
+
+.profile-photo-preview:hover {
+  transform: scale(1.02);
+}
